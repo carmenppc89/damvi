@@ -1,7 +1,0 @@
-classe abstacta: no instanciar objetos
-constante desde la clase(no es pot instanciar): static final int
-propietat d'una clase: static
-construir por defecto: constructor que no recibe nada
-
-clase subclase de algo: se extiende
-
