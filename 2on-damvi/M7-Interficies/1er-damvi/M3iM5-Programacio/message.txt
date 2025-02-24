@@ -1,0 +1,760 @@
+package part_7_8;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+public class Test {
+
+	static Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) throws GymJaExistentException {
+
+		MokeponCapturat mok = new MokeponCapturat("aaa", Tipus.FOC);
+
+	
+		Pocio p = new Pocio("a", 20);
+		afegirObjecte(p);
+
+		Objecte o = recuperaObjecte();
+
+		ArrayList<Objecte> motxilla = recuperaObjectes();
+
+		System.out.println(motxilla);
+
+		Pocio p2 = recuperaPocioConcreta(20);
+
+		afegeixMokepon(mok);
+		afegeixMokepon(mok);
+
+		MokeponCapturat mok2 = recuperarMokepon("aaa", 1, "Albert", "aaa");
+
+		teamMocketAtacaDeNou();
+
+	}
+
+	private static void teamMocketAtacaDeNou() {
+
+		try {
+			File f = new File("resources/mokepon.dat");
+			File f2 = new File("resources/mokeponCopia.dat");
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			// funciona de forma similar a un fileWriter, amb append inclós
+			FileOutputStream fos = new FileOutputStream(f2);
+			AppendableObjectOutputStream oos = new AppendableObjectOutputStream(fos, false);
+
+			try {
+				while (true) {
+					MokeponCapturat mokC = (MokeponCapturat) ois.readObject();
+					mokC.setNomEntrenador("Team Mocket");
+					oos.writeObject(mokC);
+				}
+
+			} catch (EOFException e) {
+				System.out.println("Final del fitxer oleole.");
+				ois.close();
+				oos.flush();
+				oos.close();
+				f.delete();
+				f2.renameTo(f);
+			}
+
+		} catch (FileNotFoundException e) {
+			System.out.println("no existeix el fitxer");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("excepció d'entrada/sortida");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("no s'ha trobat la classe demanada");
+			e.printStackTrace();
+		}
+	}
+
+	private static MokeponCapturat recuperarMokepon(String nom, int nivell, String entrenador, String mote) {
+		MokeponCapturat mok = null;
+		try {
+			File f = new File("resources/mokepon.dat");
+			File f2 = new File("resources/mokeponCopia.dat");
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			// funciona de forma similar a un fileWriter, amb append inclós
+			FileOutputStream fos = new FileOutputStream(f2);
+			AppendableObjectOutputStream oos = new AppendableObjectOutputStream(fos, false);
+
+			try {
+				while (true) {
+					MokeponCapturat mokC = (MokeponCapturat) ois.readObject();
+					if (mokC.getNom().equals(nom) && mokC.getNivell() == nivell
+							&& mokC.getNomEntrenador().equals(entrenador) && mokC.getNomPosat().equals(mote)) {
+						mok = mokC;
+					} else {
+						oos.writeObject(mokC);
+					}
+				}
+
+			} catch (EOFException e) {
+				System.out.println("Final del fitxer oleole.");
+				ois.close();
+				oos.flush();
+				oos.close();
+				f.delete();
+				f2.renameTo(f);
+				return mok;
+			}
+
+		} catch (FileNotFoundException e) {
+			System.out.println("no existeix el fitxer");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("excepció d'entrada/sortida");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("no s'ha trobat la classe demanada");
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	private static void afegeixMokepon(MokeponCapturat mok) {
+
+		boolean trobat = false;
+		try {
+			File f = new File("resources/mokepon.dat");
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			try {
+				while (true) {
+					MokeponCapturat mokC = (MokeponCapturat) ois.readObject();
+					System.out.println(mokC);
+					if (mokC.equals(mok)) {
+						trobat = true;
+						System.out.println("Aquest Mokepon ja era al Fitxer.");
+					}
+				}
+
+			} catch (EOFException e) {
+				System.out.println("Final del fitxer oleole.");
+				ois.close();
+			}
+
+		} catch (FileNotFoundException e) {
+			System.out.println("no existeix el fitxer");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("excepció d'entrada/sortida");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("no s'ha trobat la classe demanada");
+			e.printStackTrace();
+		}
+
+		if (!trobat) {
+			try {
+				File f = new File("resources/mokepon.dat");
+
+				boolean intervencionALaValentina = f.exists();
+				// funciona de forma similar a un fileWriter, amb append inclós
+				FileOutputStream fos = new FileOutputStream(f, intervencionALaValentina);
+				AppendableObjectOutputStream oos = new AppendableObjectOutputStream(fos, intervencionALaValentina);
+				oos.writeObject(mok);
+				oos.flush();
+				oos.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private static Pocio recuperaPocioConcreta(int n) {
+		try {
+			File f = new File("resources/objectes.dat");
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			try {
+				while (true) {
+					Objecte o = (Objecte) ois.readObject();
+					if (o instanceof Pocio) {
+						System.out.println("Poció");
+						Pocio p = (Pocio) o;
+						if (p.hp_curada == n) {
+							ois.close();
+							return p;
+						}
+					}
+				}
+
+			} catch (EOFException e) {
+				System.out.println("Final del fitxer oleole.");
+				ois.close();
+				return null;
+			}
+
+		} catch (FileNotFoundException e) {
+			System.out.println("no existeix el fitxer");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("excepció d'entrada/sortida");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("no s'ha trobat la classe demanada");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private static ArrayList<Objecte> recuperaObjectes() {
+		try {
+			File f = new File("resources/objectes.dat");
+
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			ArrayList<Objecte> alo = new ArrayList<>();
+
+			try {
+				while (true) {
+
+					Objecte o = (Objecte) ois.readObject();
+					if (o instanceof Pocio) {
+						System.out.println("Poció");
+						Pocio p = (Pocio) o;
+						alo.add(p);
+					} else if (o instanceof Reviure) {
+						System.out.println("Reviure");
+						Reviure r = (Reviure) o;
+						alo.add(r);
+					} else {
+						System.out.println("Un altre objecte.");
+						alo.add(o);
+					}
+
+				}
+
+			} catch (EOFException e) {
+				System.out.println("Final del fitxer oleole.");
+				ois.close();
+				return alo;
+			}
+
+		} catch (FileNotFoundException e) {
+			System.out.println("no existeix el fitxer");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("excepció d'entrada/sortida");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("no s'ha trobat la classe demanada");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private static Objecte recuperaObjecte() {
+		try {
+			File f = new File("resources/objectes.dat");
+			FileInputStream fis = new FileInputStream(f);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			Objecte o = (Objecte) ois.readObject();
+			if (o instanceof Pocio) {
+				System.out.println("Poció");
+				Pocio p = (Pocio) o;
+				ois.close();
+				return p;
+			} else if (o instanceof Reviure) {
+				System.out.println("Reviure");
+				Reviure r = (Reviure) o;
+				ois.close();
+				return o;
+			} else {
+				System.out.println("Un altre objecte.");
+				ois.close();
+				return o;
+			}
+
+		} catch (FileNotFoundException e) {
+			System.out.println("no existeix el fitxer");
+			e.printStackTrace();
+		} catch (EOFException e) {
+			System.out.println("Final del fitxer oleole.");
+		} catch (IOException e) {
+			System.out.println("excepció d'entrada/sortida");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("no s'ha trobat la classe demanada");
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	private static void afegirObjecte(Objecte obj) {
+
+		try {
+			File f = new File("resources/objectes.dat");
+
+			boolean intervencionALaValentina = f.exists();
+			// funciona de forma similar a un fileWriter, amb append inclós
+			FileOutputStream fos = new FileOutputStream(f, intervencionALaValentina);
+			AppendableObjectOutputStream oos = new AppendableObjectOutputStream(fos, intervencionALaValentina);
+			oos.writeObject(obj);
+			oos.flush();
+			oos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private static void consultaEntrenadors(String nomGimnas) {
+		try {
+			File f = new File("resources/gimnas.txt");
+
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+
+			String gimnasos = br.readLine();
+
+			String[] gimnas = gimnasos.split(";");
+
+			for (int i = 0; i < gimnas.length; i++) {
+				if (gimnas[i].contains(nomGimnas)) {
+					String[] gym = gimnas[i].split(",");
+					if (gym.length == 5) {
+						System.out.println(gym[4]);
+					} else
+						System.out.println("Cap entrenador ha superat el gimnàs.");
+				}
+			}
+
+			br.close();
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void borrarGimnas(String nomGimnas) {
+		try {
+			File f = new File("resources/gimnas.txt");
+			File f2 = new File("resources/renombrat.txt");
+
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+
+			String gimnasos = br.readLine();
+
+			String[] gimnas = gimnasos.split(";");
+
+			for (int i = 0; i < gimnas.length; i++) {
+				if (gimnas[i].contains(nomGimnas)) {
+					gimnasos = gimnasos.replace(";" + gimnas[i], "");
+				}
+			}
+
+			FileWriter fw = new FileWriter(f2);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			bw.write(gimnasos);
+			bw.flush();
+			bw.close();
+			br.close();
+			f.delete();
+			f2.renameTo(f);
+			System.out.println("Gimnas esborrat");
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void invictes(int n) {
+		try {
+			File f = new File("resources/gimnas.txt");
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+
+			while (br.ready()) {
+				String gimnasos = br.readLine();
+				String[] gimnas = gimnasos.split(";");
+				String[][] valor = new String[gimnas.length][4];
+				for (int i = 0; i < valor.length; i++) {
+					String[] thisGym = gimnas[i].split(",");
+					int guanyats = Integer.parseInt(thisGym[3]);
+					if (guanyats <= n) {
+						System.out.print("Gimnàs ");
+						for (int j = 0; j < thisGym.length - 1; j++) {
+							System.out.print(thisGym[j] + " ");
+						}
+						System.out.println();
+					}
+				}
+
+			}
+			br.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("El fitxer no existeix");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Excepció general de lectura");
+			e.printStackTrace();
+		}
+	}
+
+	private static void copiaSeguretat(String path1, String path2) {
+
+		try {
+			File f = new File(path1);
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			File f2 = new File(path2);
+			String g = br.readLine();
+			FileWriter fw = new FileWriter(f2);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(g);
+			bw.close();
+			br.close();
+
+			System.out.println("arxiu clonat.");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void canviLider(String nomGimnas, String nouLider) {
+		try {
+			File f = new File("resources/gimnas.txt");
+			File f2 = new File("resources/renombrat.txt");
+
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+
+			String gimnasos = br.readLine();
+
+			String[] gimnas = gimnasos.split(";");
+
+			for (int i = 0; i < gimnas.length; i++) {
+				if (gimnas[i].contains(nomGimnas)) {
+					String[] gym = gimnas[i].split(",");
+					String oldLider = gym[2];
+					String oldGym = gimnas[i];
+					gimnas[i] = gimnas[i].replace(oldLider, nouLider);
+					gimnasos = gimnasos.replace(oldGym, gimnas[i]);
+				}
+			}
+
+			FileWriter fw = new FileWriter(f2);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			bw.write(gimnasos);
+			bw.flush();
+			bw.close();
+			br.close();
+			f.delete();
+			f2.renameTo(f);
+
+			System.out.println("Lider canviat.");
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void afegeixEntrenador(String nomGimnas, String nomEntrenador) {
+		try {
+			File f = new File("resources/gimnas.txt");
+			File f2 = new File("resources/renombrat.txt");
+
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+
+			String gimnasos = br.readLine();
+
+			String[] gimnas = gimnasos.split(";");
+
+			for (int i = 0; i < gimnas.length; i++) {
+				if (gimnas[i].contains(nomGimnas)) {
+					String[] gym = gimnas[i].split(",");
+					String oldGym = gimnas[i];
+					int n = Integer.parseInt(gym[3]) + 1;
+					String n1 = n + "";
+					gym[3] = n1;
+					if (gym.length == 5) {
+						gym[4] = gym[4] + " " + nomEntrenador;
+						gimnas[i] = gym[0] + "," + gym[1] + "," + gym[2] + "," + gym[3] + "," + gym[4];
+					} else {
+						gym[3] = gym[3] + "," + nomEntrenador;
+						gimnas[i] = gym[0] + "," + gym[1] + "," + gym[2] + "," + gym[3];
+					}
+					gimnasos = gimnasos.replace(oldGym, gimnas[i]);
+				}
+			}
+
+			FileWriter fw = new FileWriter(f2);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			bw.write(gimnasos);
+			bw.flush();
+			bw.close();
+			br.close();
+			f.delete();
+			f2.renameTo(f);
+			System.out.println("Entrenador afegit.");
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void cercaLider(String nomGimnas) {
+		try {
+			File f = new File("resources/gimnas.txt");
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			while (br.ready()) {
+				String gimnasos = br.readLine();
+				String[] gimnas = gimnasos.split(";");
+				String[][] valor = new String[gimnas.length][4];
+				for (int i = 0; i < valor.length; i++) {
+					String[] thisGym = gimnas[i].split(",");
+					for (int j = 0; j < thisGym.length; j++) {
+						valor[i][j] = thisGym[j];
+						if (valor[i][j].equals(nomGimnas)) {
+							System.out.println("El lider és " + thisGym[j + 2]);
+						}
+					}
+				}
+
+			}
+
+			br.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("El fitxer no existeix");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Excepció general de lectura");
+			e.printStackTrace();
+		}
+
+	}
+
+	private static void mostraGimnasos() {
+		try {
+			File f = new File("resources/gimnas.txt");
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			System.out.println("Imprimint Gimnasos:");
+			while (br.ready()) {
+				String gimnasos = br.readLine();
+				String[] gimnas = gimnasos.split(";");
+				String[][] valor = new String[gimnas.length][4];
+				for (int i = 0; i < valor.length; i++) {
+					System.out.print("Gimnas " + i + ": ");
+					String[] thisGym = gimnas[i].split(",");
+					for (int j = 0; j < thisGym.length; j++) {
+						System.out.print(thisGym[j] + " ");
+					}
+					System.out.println();
+				}
+
+			}
+
+			br.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("El fitxer no existeix");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Excepció general de lectura");
+			e.printStackTrace();
+		}
+
+	}
+
+	private static void afegirGimnas(String nomGimnas, String ciutat, String nomLider) throws GymJaExistentException {
+
+		try {
+			File f = new File("resources/gimnas.txt");
+			FileReader fr;
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			while (br.ready()) {
+				String gimnasos = br.readLine();
+				String[] gimnas = gimnasos.split(";");
+				for (int i = 0; i < gimnas.length; i++) {
+					String[] thisGym = gimnas[i].split(",");
+					if (thisGym[0].equals(nomGimnas)) {
+						throw new GymJaExistentException("El gimnàs ja existeix");
+					}
+				}
+
+			}
+
+			br.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("El fitxer no existeix");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Excepció general de lectura");
+			e.printStackTrace();
+		}
+
+		try {
+			// path al fitxer
+			File f = new File("resources/gimnas.txt");
+			FileWriter fw;
+			fw = new FileWriter(f, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			System.out.println("Gimnas afegit.");
+			// FUNCIONS IMPORTANTS DEL BUFFEREDWRITER
+			// append. Escriu al buffer intern. Sense salts de linea. No escriu al fitxer
+			// fins que fas un flush
+			bw.append(nomGimnas + ",");
+			bw.append(ciutat + ",");
+			bw.append(nomLider + ",");
+			bw.append("0;");
+			// Guarda tots els canvis que has fet al buffer intern. Escriu a fitxer
+			bw.flush();
+			// close. Tanca el bufferedWriter i evita que quedi la memoria penjant
+			bw.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("El fitxer no existeix");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Excepció general d'escriptura");
+			e.printStackTrace();
+		}
+
+	}
+
+	public void capturar(Mokepon mok, String nomEntrenador, String nomDonat) {
+
+		if (!(mok instanceof MokeponCapturat)) {
+			MokeponCapturat mc = new MokeponCapturat(mok, nomDonat, nomEntrenador);
+		} else {
+			System.out.println("No pots capturar un Mokepon que ja esta capturat");
+		}
+
+	}
+
+	public static void combat(MokeponCapturat mok1, MokeponCapturat mok2) {
+		// si mokepon1 es més rapid, torna 1, si no, torna 2.
+		int torn = MokeponMesRapid(mok1, mok2);
+
+		boolean fi = false;
+
+		while (!fi) {
+			// usuari tria el numero d'atac amb un scanner
+			int numAtac = triaAtac();
+
+			// si el torn es 1 mokepon1 ataca a mokepon2, si el torn es 2 al reves. Consulta
+			// si el mokepon atacat ha resultat debilitat, i retorna l'estat del Mokepon
+			// atacant
+			boolean debilitat = gestionarAtac(mok1, mok2, torn, numAtac);
+
+			// si l'altre Mokepon queda debilitat, s'acaba el combat i s'anuncia el
+			// guanyador
+			fi = fiCombat(debilitat, torn, mok1, mok2);
+
+			// es passa el torn al següent
+			torn = canviTorn(torn);
+		}
+
+	}
+
+	private static boolean gestionarAtac(MokeponCapturat mok1, MokeponCapturat mok2, int torn, int numAtac) {
+
+		if (torn == 1) {
+			mok1.atacar(mok2, numAtac);
+			return mok2.isDebilitat();
+		} else {
+			mok2.atacar(mok1, numAtac);
+			return mok1.isDebilitat();
+		}
+
+	}
+
+	private static boolean fiCombat(boolean debilitat, int torn, MokeponCapturat mok1, MokeponCapturat mok2) {
+		if (!debilitat) {
+			return false;
+		} else {
+			if (torn == 1)
+				System.out.println("Ha guanyat " + mok1.getNomPosat() + "!");
+			else
+				System.out.println("Ha guanyat " + mok2.getNomPosat() + "!");
+
+			return true;
+		}
+	}
+
+	private static int canviTorn(int torn) {
+		// TODO Auto-generated method stub
+		if (torn == 1)
+			return 2;
+		else
+			return 1;
+	}
+
+	private static int triaAtac() {
+		return sc.nextInt();
+	}
+
+	private static int MokeponMesRapid(MokeponCapturat mok1, MokeponCapturat mok2) {
+
+		if (mok1.getVel() > mok2.getVel())
+			return 1;
+		else
+			return 2;
+	}
+
+}
