@@ -1,0 +1,802 @@
+<body>
+<div id="restablecer"><p>Restablecer valores</p></div>
+<div id="wrapper">
+
+
+
+    <div>
+        <button  onclick="hideImg1()">Hide Image</button>
+        <button  onclick="showImg1()">Show Image</button>
+        <div id="div1" class="tl">
+            <button onclick="mover1()">Mover</button>
+            <input type="color" id="seleccionaColor1">
+            <button class="btn-grad" onclick="changeColor1()">Canviar Color</button>
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+
+                <button class="dropbtn" onclick="myFunction()">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <img id="imgdrop1" class="dropImg" src="http://pngimg.com/uploads/penguin/pinguin_PNG15.png">
+                    <img id="imgdrop2" class="dropImg" src="https://clipart.info/images/ccovers/1522855946cat-png-cartoon.png">
+                    <img id="imgdrop3" class="dropImg" src="https://i.pinimg.com/originals/da/0f/17/da0f17568351694b550182d8caac5c00.png">
+                    <img id="imgdrop4" class="dropImg" src="https://cdn-icons-png.flaticon.com/512/1459/1459520.png">
+
+                </div>
+         
+
+            <button class="btn-grad" onclick="removePato()">remove Pato</button>
+            <p>1</p>
+
+            <img class="imgs" src="https://www.especiesveterinarios.com/archivos/2012/07/cobaya.jpg" id="img1">
+        </div> <!-- w    ww    . d  e  m o  2   s   . c o    m-->
+        <div id="div2" class="tc">
+
+            <button onclick="mover2()">Mover</button>
+            <input type="color" id="seleccionaColor2">
+            <button class="btn-grad" onclick="changeColor2()">Canviar Color</button>
+            <p>2</p>
+        </div>
+        <div id="div3" class="tr">
+            <button onclick="mover3()">Mover</button>
+            <input type="color" id="seleccionaColor3">
+            <button class="btn-grad" onclick="changeColor3()">Canviar Color</button>
+            <p>3</p>
+
+        </div>
+    </div>
+    <div>
+        <button  onclick="hideImg2()">Hide Image</button>
+        <button  onclick="showImg2()">Show Image</button>
+        <div id="div4" class="ml">
+            <button onclick="mover4()">Mover</button>
+            <input type="color" id="seleccionaColor4">
+            <button class="btn-grad" onclick="changeColor4()">Canviar Color</button>
+            <p>4</p>
+            <img class="imgs" src="https://www.especiesveterinarios.com/archivos/2012/07/cobaya.jpg" id="img2">
+        </div>
+        <div id="div5" class="mc">
+            <button onclick="mover5()">Mover</button>
+            <input type="color" id="seleccionaColor5">
+            <button class="btn-grad" onclick="changeColor5()">Canviar Color</button>
+            <p id="crear">5</p>
+        </div>
+        <div id="div6" class="mr">
+            <button onclick="mover6()">Mover</button>
+            <input type="color" id="seleccionaColor6">
+            <button class="btn-grad" onclick="changeColor6()">Canviar Color</button>
+            <p>6</p>
+        </div>
+    </div>
+    <div>
+        <button  onclick="hideImg3()">Hide Image</button>
+        <button  onclick="showImg3()">Show Image</button>
+        <div id="div7" class="bl">
+            <button onclick="mover7()">Mover</button>
+            <input type="color" id="seleccionaColor7">
+            <button class="btn-grad" onclick="changeColor7()">Canviar Color</button>
+            <p>7</p>
+            <img class="imgs" src="https://www.especiesveterinarios.com/archivos/2012/07/cobaya.jpg" id="img3">
+        </div>
+        <div id="div8" class="bc">
+            <button onclick="mover8()">Mover</button>
+            <input type="color" id="seleccionaColor8">
+            <button class="btn-grad" onclick="changeColor8()">Canviar Color</button>
+            <p>8</p>
+        </div>
+        <div id="div9" class="br">
+            <button onclick="mover9()">Mover</button>
+            <input type="color" id="seleccionaColor9">
+            <button class="btn-grad" onclick="changeColor9()">Canviar Color</button>
+            <p>9</p>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    #restablecer{
+        background-color:sienna;
+    }
+
+    .dropImg{
+        height:100px;
+        width:100px;
+        border-radius: 50%;
+    }
+    .imgs{
+        height:50%;
+        width:50%;
+        border-radius: 50%;
+    }
+    #div1{
+        background-color:blue;
+    }
+    #div2{
+        background-color:greenyellow;
+    }
+    #div3{
+        background-color:pink;
+    }
+    #div4{
+        background-color:red;
+    }
+    #div5{
+        background-color:mediumpurple;
+    }#div6{
+         background-color:white;
+     }
+    #div7{
+        background-color:orange;
+    }
+    #div8{
+        background-color:lightgoldenrodyellow;
+    }#div9{
+         background-color:palevioletred;
+     }
+
+    #pato{
+        height:20%;
+        width:20%;
+
+    }
+    html, body {
+        width:100%;
+        height:100%;
+    }
+
+    html,body {
+        margin:0;
+        padding:0
+    }
+
+    * {<!-- w    w w .  d   e   mo    2  s.    co   m -->
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        box-sizing:border-box;
+    }
+
+    p {
+        text-align:center;
+        position:relative;
+        top:34%;
+    }
+
+    #wrapper {
+        width:100%;
+        height:100%;
+        position:static;
+        top:0;
+        left:0;
+        min-height:450px;
+        min-width:450px;
+        overflow:hidden;
+    }
+
+    #wrapper>div {
+        width:33.333%;
+        height:100%;
+        float:left;
+        position:relative;
+    }
+
+    #wrapper>div>div {
+        border:1px solid #888;
+        width:100%;
+        height:33.333%;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+        cursor: pointer;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+        background-color: red;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .show {
+        display: block;
+    }
+
+
+</style>
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    var contador = 0;
+    var contador2 = 0;
+    var contador3 = 0;
+
+var div_cont = document.getElementById("wrapper");
+    var div_array = [];
+    div_array[0] = document.getElementById("div1");
+    div_array[1] = document.getElementById("div2");
+    div_array[2] = document.getElementById("div3");
+    div_array[3] = document.getElementById("div4");
+    div_array[4] = document.getElementById("div5");
+    div_array[5] = document.getElementById("div6");
+    div_array[6] = document.getElementById("div7");
+    div_array[7] = document.getElementById("div8");
+    div_array[8] = document.getElementById("div9");
+
+
+    document.body.appendChild(div_cont);
+
+    function mover1(){
+        if(contador == 0){
+            console.log(contador);
+            div_array[0].style.position = "relative";
+            div_array[0].style.top = 327;
+            div_array[1].style.position = "relative";
+            div_array[1].style.top = 327;
+            div_array[2].style.position = "relative";
+            div_array[2].style.top = -654;
+            contador++;
+        }else if(contador == 1){
+            console.log(contador);
+            div_array[0].style.position = "relative";
+            div_array[0].style.top = 654;
+            div_array[1].style.position = "relative";
+            div_array[1].style.top = -327;
+            div_array[2].style.position = "relative";
+            div_array[2].style.top = -327;
+            contador++;
+        }else if(contador == 2){
+            console.log(contador);
+            div_array[0].style.position = "static";
+            div_array[1].style.position = "static";
+            div_array[2].style.position = "static";
+            contador = 0;
+        }
+    }
+    function mover2(){
+        if(contador == 0){
+            console.log(contador);
+            div_array[0].style.position = "relative";
+            div_array[0].style.top = 327;
+            div_array[1].style.position = "relative";
+            div_array[1].style.top = 327;
+            div_array[2].style.position = "relative";
+            div_array[2].style.top = -654;
+            contador++;
+        }else if(contador == 1){
+            console.log(contador);
+            div_array[0].style.position = "relative";
+            div_array[0].style.top = 654;
+            div_array[1].style.position = "relative";
+            div_array[1].style.top = -327;
+            div_array[2].style.position = "relative";
+            div_array[2].style.top = -327;
+            contador++;
+        }else if(contador == 2){
+            console.log(contador);
+            div_array[0].style.position = "static";
+            div_array[1].style.position = "static";
+            div_array[2].style.position = "static";
+            contador = 0;
+        }
+    }
+    function mover3(){
+        if (contador == 0) {
+            console.log(contador);
+            div_array[0].style.position = "relative";
+            div_array[0].style.top = 327;
+            div_array[1].style.position = "relative";
+            div_array[1].style.top = 327;
+            div_array[2].style.position = "relative";
+            div_array[2].style.top = -654;
+            contador++;
+        } else if (contador == 1) {
+            console.log(contador);
+            div_array[0].style.position = "relative";
+            div_array[0].style.top = 654;
+            div_array[1].style.position = "relative";
+            div_array[1].style.top = -327;
+            div_array[2].style.position = "relative";
+            div_array[2].style.top = -327;
+            contador++;
+        } else if (contador == 2) {
+            console.log(contador);
+            div_array[0].style.position = "static";
+            div_array[1].style.position = "static";
+            div_array[2].style.position = "static";
+            contador = 0;
+        }
+    }
+
+    function mover4(){
+        if (contador2 == 0) {
+            console.log(contador2);
+            div_array[3].style.position = "relative";
+            div_array[3].style.top = 327;
+            div_array[4].style.position = "relative";
+            div_array[4].style.top = 327;
+            div_array[5].style.position = "relative";
+            div_array[5].style.top = -654;
+            contador2++;
+        } else if (contador2 == 1) {
+            console.log(contador2);
+            div_array[3].style.position = "relative";
+            div_array[3].style.top = 654;
+            div_array[4].style.position = "relative";
+            div_array[4].style.top = -327;
+            div_array[5].style.position = "relative";
+            div_array[5].style.top = -327;
+            contador2++;
+        } else if (contador2 == 2) {
+            console.log(contador2);
+            div_array[3].style.position = "static";
+            div_array[4].style.position = "static";
+            div_array[5].style.position = "static";
+            contador2 = 0;
+        }
+    }
+
+
+    //
+    //
+    //
+    //
+    //
+    //COLUMNA 2
+    //
+    //
+    //
+    //
+    //
+   function mover5(){
+       if (contador2 == 0) {
+           console.log(contador2);
+           div_array[3].style.position = "relative";
+           div_array[3].style.top = 327;
+           div_array[4].style.position = "relative";
+           div_array[4].style.top = 327;
+           div_array[5].style.position = "relative";
+           div_array[5].style.top = -654;
+           contador2++;
+       } else if (contador2 == 1) {
+           console.log(contador2);
+           div_array[3].style.position = "relative";
+           div_array[3].style.top = 654;
+           div_array[4].style.position = "relative";
+           div_array[4].style.top = -327;
+           div_array[5].style.position = "relative";
+           div_array[5].style.top = -327;
+           contador2++;
+       } else if (contador2 == 2) {
+           console.log(contador2);
+           div_array[3].style.position = "static";
+           div_array[4].style.position = "static";
+           div_array[5].style.position = "static";
+           contador2 = 0;
+       }
+   }
+
+
+    function mover6(){
+        if (contador2 == 0) {
+            console.log(contador2);
+            div_array[3].style.position = "relative";
+            div_array[3].style.top = 327;
+            div_array[4].style.position = "relative";
+            div_array[4].style.top = 327;
+            div_array[5].style.position = "relative";
+            div_array[5].style.top = -654;
+            contador2++;
+        } else if (contador2 == 1) {
+            console.log(contador2);
+            div_array[3].style.position = "relative";
+            div_array[3].style.top = 654;
+            div_array[4].style.position = "relative";
+            div_array[4].style.top = -327;
+            div_array[5].style.position = "relative";
+            div_array[5].style.top = -327;
+            contador2++;
+        } else if (contador2 == 2) {
+            console.log(contador2);
+            div_array[3].style.position = "static";
+            div_array[4].style.position = "static";
+            div_array[5].style.position = "static";
+            contador2 = 0;
+        }
+    }
+
+
+    //
+    //
+    //
+    //
+    //
+    //COLUMNA 3
+    //
+    //
+    //
+    //
+    //
+
+    function mover7(){
+        if (contador3 == 0) {
+            console.log(contador3);
+            div_array[6].style.position = "relative";
+            div_array[6].style.top = 327;
+            div_array[7].style.position = "relative";
+            div_array[7].style.top = 327;
+            div_array[8].style.position = "relative";
+            div_array[8].style.top = -654;
+            contador3++;
+        } else if (contador3 == 1) {
+            console.log(contador3);
+            div_array[6].style.position = "relative";
+            div_array[6].style.top = 654;
+            div_array[7].style.position = "relative";
+            div_array[7].style.top = -327;
+            div_array[8].style.position = "relative";
+            div_array[8].style.top = -327;
+            contador3++;
+        } else if (contador3 == 2) {
+            console.log(contador3);
+            div_array[6].style.position = "static";
+            div_array[7].style.position = "static";
+            div_array[8].style.position = "static";
+            contador3 = 0;
+        }
+    }
+
+    function mover8(){
+        if (contador3 == 0) {
+            console.log(contador3);
+            div_array[6].style.position = "relative";
+            div_array[6].style.top = 327;
+            div_array[7].style.position = "relative";
+            div_array[7].style.top = 327;
+            div_array[8].style.position = "relative";
+            div_array[8].style.top = -654;
+            contador3++;
+        } else if (contador3 == 1) {
+            console.log(contador3);
+            div_array[6].style.position = "relative";
+            div_array[6].style.top = 654;
+            div_array[7].style.position = "relative";
+            div_array[7].style.top = -327;
+            div_array[8].style.position = "relative";
+            div_array[8].style.top = -327;
+            contador3++;
+        } else if (contador3 == 2) {
+            console.log(contador3);
+            div_array[6].style.position = "static";
+            div_array[7].style.position = "static";
+            div_array[8].style.position = "static";
+            contador3 = 0;
+        }
+    }
+
+    function mover9(){
+
+            if (contador3 == 0) {
+                console.log(contador3);
+                div_array[6].style.position = "relative";
+                div_array[6].style.top = 327;
+                div_array[7].style.position = "relative";
+                div_array[7].style.top = 327;
+                div_array[8].style.position = "relative";
+                div_array[8].style.top = -654;
+                contador3++;
+            } else if (contador3 == 1) {
+                console.log(contador3);
+                div_array[6].style.position = "relative";
+                div_array[6].style.top = 654;
+                div_array[7].style.position = "relative";
+                div_array[7].style.top = -327;
+                div_array[8].style.position = "relative";
+                div_array[8].style.top = -327;
+                contador3++;
+            } else if (contador3 == 2) {
+                console.log(contador3);
+                div_array[6].style.position = "static";
+                div_array[7].style.position = "static";
+                div_array[8].style.position = "static";
+                contador3 = 0;
+            }
+    }
+
+
+
+
+    function hideImg1(){
+            var hide = document.getElementById("img1");
+            hide.style.display = "none";
+        }
+    function showImg1(){
+            var show = document.getElementById("img1");
+            show.style.display ="initial";
+    }
+    function hideImg2(){
+        var hide = document.getElementById("img2");
+        hide.style.display = "none";
+    }
+    function showImg2(){
+        var show = document.getElementById("img2");
+        show.style.display ="initial";
+    }
+    function hideImg3(){
+        var hide = document.getElementById("img3");
+        hide.style.display = "none";
+    }
+    function showImg3(){
+        var show = document.getElementById("img3");
+        show.style.display ="initial";
+    }
+    var patos = 0;
+
+
+    function removePato(){
+        if(patos == 1){
+            var pato = document.getElementById("pato").remove();
+            patos--;
+        }else{
+            console.log("no hay patos que borrar")
+        }
+    }
+
+ document.getElementById("imgdrop1").onclick = function(){
+     if(patos == 0){
+         var pato = document.createElement("img");
+         pato.src = "http://pngimg.com/uploads/penguin/pinguin_PNG15.png";
+         pato.setAttribute("class", "dropImg");
+         pato.setAttribute("id", "pato");
+         var patoCreated = document.getElementById("crear");
+         patoCreated.appendChild(pato);
+         patos++;
+     }else{
+         console.log("No se puede crear mas de 1")
+     }
+ }
+    document.getElementById("imgdrop2").onclick = function(){
+        if(patos == 0){
+            var pato = document.createElement("img");
+            pato.src = "https://clipart.info/images/ccovers/1522855946cat-png-cartoon.png";
+            pato.setAttribute("class", "dropImg");
+            pato.setAttribute("id", "pato");
+            var patoCreated = document.getElementById("crear");
+            patoCreated.appendChild(pato);
+            patos++;
+        }else{
+            console.log("No se puede crear mas de 1")
+        }
+    }
+    document.getElementById("imgdrop3").onclick = function(){
+        if(patos == 0){
+            var pato = document.createElement("img");
+            pato.src = "https://i.pinimg.com/originals/da/0f/17/da0f17568351694b550182d8caac5c00.png";
+            pato.setAttribute("class", "dropImg");
+            pato.setAttribute("id", "pato");
+            var patoCreated = document.getElementById("crear");
+            patoCreated.appendChild(pato);
+            patos++;
+        }else{
+            console.log("No se puede crear mas de 1")
+        }
+    }
+    document.getElementById("imgdrop4").onclick = function(){
+        if(patos == 0){
+            var pato = document.createElement("img");
+            pato.src = "https://cdn-icons-png.flaticon.com/512/1459/1459520.png";
+            pato.setAttribute("class", "dropImg");
+            pato.setAttribute("id", "pato");
+            var patoCreated = document.getElementById("crear");
+            patoCreated.appendChild(pato);
+            patos++;
+        }else{
+            console.log("No se puede crear mas de 1")
+        }
+    }
+    var restablecer = document.getElementById("restablecer");
+
+    restablecer.onclick = function(){
+        div_array[0].style.position = "static";
+        div_array[1].style.position = "static";
+        div_array[2].style.position = "static";
+        div_array[3].style.position = "static";
+        div_array[4].style.position = "static";
+        div_array[5].style.position = "static";
+        div_array[6].style.position = "static";
+        div_array[7].style.position = "static";
+        div_array[8].style.position = "static";
+
+        div_array[0].style.backgroundColor = "blue";
+        div_array[1].style.backgroundColor = "greenyellow";
+        div_array[2].style.backgroundColor = "pink";
+        div_array[3].style.backgroundColor = "red";
+        div_array[4].style.backgroundColor = "mediumpurple";
+        div_array[5].style.backgroundColor = "white";
+        div_array[6].style.backgroundColor = "orange";
+        div_array[7].style.backgroundColor = "lightgoldenrodyellow";
+        div_array[8].style.backgroundColor = "palevioletred";
+
+        /*background-color:blue;
+        background-color:greenyellow;
+        background-color:pink;
+        background-color:red;
+        background-color:mediumpurple;
+        background-color:white;
+        background-color:orange;
+        background-color:lightgoldenrodyellow;
+        background-color:palevioletred;*/
+       contador = 0;
+       contador2 = 0;
+       contador3 = 0;
+        var show = document.getElementById("img1");
+        show.style.display ="initial";
+        var show2 = document.getElementById("img2");
+        show2.style.display ="initial";
+        var show3 = document.getElementById("img3");
+        show3.style.display ="initial";
+        var pato = document.getElementById("pato").remove();
+
+    }
+    function changeColor1(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor1").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div1");
+
+            Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }
+    function changeColor2(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor2").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div2");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }
+    function changeColor3(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor3").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div3");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }function changeColor4(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor4").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div4");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }function changeColor5(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor5").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div5");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }function changeColor6(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor6").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div6");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }function changeColor7(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor7").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div7");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }function changeColor8(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor8").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div8");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }
+    function changeColor9(){
+
+
+        var ColorSeleccionado = document.getElementById("seleccionaColor9").value;
+        console.log(ColorSeleccionado);
+        var Colordiv1 = document.getElementById("div9");
+
+        Colordiv1.style.backgroundColor = ColorSeleccionado;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
