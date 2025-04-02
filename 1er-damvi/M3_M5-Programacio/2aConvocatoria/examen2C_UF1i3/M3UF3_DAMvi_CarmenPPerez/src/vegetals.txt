@@ -1,2 +1,0 @@
-Tomaquet;2.3;5;
-Zanahoria;1.5;2;
