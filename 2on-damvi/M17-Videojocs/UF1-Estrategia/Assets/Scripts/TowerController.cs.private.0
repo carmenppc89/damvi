@@ -1,0 +1,101 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class TowerController : MonoBehaviour
+{
+    [SerializeField]
+    private GameObject spawnerProjectil;
+
+    private ProjectilController m_newProj;
+    bool tirarCorutina;
+    bool aturarCorutina;
+
+    List<GameObject> m_Targets = new List<GameObject>();
+
+    [SerializeField]
+    private TorreScriptable m_stats;
+
+    private Vector3Int m_TileOcupada;
+    public Vector3Int TileOcupada
+    {
+        set { m_TileOcupada = value; }
+    }
+
+    private GameObject m_rang;
+    /*
+    private List<Vector3Int> m_TilesOcupades;
+    [SerializeField]
+    private PlacingTowerController m_placingTowerController;
+    */
+    private void Awake()
+    {
+        //print(this.gameObject.name);
+        tirarCorutina = false;
+        aturarCorutina = false;
+        // + Quitar la visual del rango
+        this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+
+        //print("RANG: "+m_rang);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+            //print(this.name + " -> " + collision.name + " el detecto");
+            SetTarget(collision.gameObject);
+ 
+            print("Targets: ");
+            foreach (var t in m_Targets)
+            {
+                print("+ " + t + " (" + m_Targets.Count + ")");
+            }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        RemoveTarget(collision.gameObject);
+    }
+
+    IEnumerator Shoot()
+    {
+        while (true)
+        {
+            m_newProj = Instantiate(m_stats.m_projectil);
+            m_newProj.transform.position = spawnerProjectil.transform.position;
+            m_newProj.GetComponent<ProjectilController>().target = m_Targets[0];
+            
+            yield return new WaitForSeconds(m_stats.m_AtkSpeed);
+        }
+    }
+
+    private void SetTarget(GameObject target)
+    {
+        if (target.tag == "Enemic Facil" || target.tag == "Enemic Normal" || target.tag == "Enemic Dificil" )
+        {
+            tirarCorutina = false;
+            if (m_Targets.Count == 0)
+                tirarCorutina = true;
+
+            m_Targets.Add(target);
+
+            if (tirarCorutina)
+                StartCoroutine(Shoot());
+        }
+    }
+    private void RemoveTarget(GameObject target)
+    {
+        if (target.tag == "Enemic Facil" || target.tag == "Enemic Normal" || target.tag == "Enemic Dificil")
+        {
+            m_Targets.Remove(target);
+            if (m_Targets.Count == 0)
+                aturarCorutina = true;
+
+            if (aturarCorutina)
+                StopAllCoroutines();
+        }
+    }
+}
+

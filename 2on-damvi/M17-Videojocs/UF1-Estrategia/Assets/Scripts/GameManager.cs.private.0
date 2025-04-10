@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour
+{
+    [SerializeField]
+    private GameEvent m_EventRestarVida;
+    [SerializeField]
+    private GameEvent m_EventRestarDiners;
+    private static GameManager m_Instance;
+    public static GameManager Instance
+    {
+        get { return m_Instance; }
+    }
+
+    [SerializeField]
+    public int m_Vides;
+
+    [SerializeField]
+    public int m_Diners;
+
+    private void Awake()
+    {
+        if (m_Instance == null)
+            m_Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+        //SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    public void QuitarVida()
+    {
+        m_Vides--;
+        m_EventRestarVida.Raise();
+    }
+
+    public void RestarDiners(int diners)
+    {
+        //hauria de passar-li un parametre que ara no puc perque jaja no ser fer events generics ENCARA
+        m_Diners -= diners;
+        print(m_Diners);
+        m_EventRestarDiners.Raise();
+    }
+}

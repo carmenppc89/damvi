@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class ModificarTextRonda : MonoBehaviour
+{
+    private TextMeshProUGUI m_texto;
+
+    [SerializeField]
+    private Animator animacion;
+
+    private void Awake()
+    {
+        m_texto = GetComponent<TextMeshProUGUI>();
+    }
+
+    private void Start()
+    {
+        CambiarTexto();
+    }
+
+    public void CambiarTexto()
+    {
+        m_texto.text = "Ronda: " + GameManager.Instance.numRondas.ToString();
+        print("Hola el evento se ha lanzado");
+        animacion.Play("TextFadeIn");
+    }
+
+}

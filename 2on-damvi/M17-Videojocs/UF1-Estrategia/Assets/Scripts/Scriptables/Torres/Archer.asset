@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf54eb3962f38124d9c6260b1022325b, type: 3}
+  m_Name: Archer
+  m_EditorClassIdentifier: 
+  m_AtkSpeed: 1
+  m_Cost: 5
+  m_projectil: {fileID: 3882008280442465663, guid: c3dd92fd8d5538e4ca50eb3e68d4fe9f, type: 3}
+  GOProjectil: {fileID: 6512296379103967813, guid: c3dd92fd8d5538e4ca50eb3e68d4fe9f, type: 3}
