@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrayFormes">
+        <item>Urgent</item>
+        <item>Consulta</item>
+        <item>Informació</item>
+        <item>Sugerència</item>
+    </string-array>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <string name="app_name">UF1-1-A13_Spinner_Intents_2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hint_email">Escriu email</string>
+    <string name="hint_mensaje">Missatge</string>
+    <string name="hint_nombre">Escriu nom</string>
+    <string name="menu_settings">Settings</string>
+    <string name="texte_boto_enviar">Enviar mail</string>
+    <string name="texte_usar_mail">Fer servir mail</string>
+    <string name="title_activity_main">Spinner and Intents 2</string>
+    <string name="titulo_spinner">Forma de enviament</string>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+</resources>

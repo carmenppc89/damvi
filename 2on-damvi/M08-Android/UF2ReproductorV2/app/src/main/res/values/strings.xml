@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">UF2-A7AudioMediaPlayer</string>
+    <string name="btn_pause">BTN_Pause</string>
+    <string name="btn_skipNext">BTN_SkipNext</string>
+    <string name="btn_skipPrev">BTN_SkipPrevious</string>
+</resources>

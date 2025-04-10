@@ -1,0 +1,4 @@
+#Tue Oct 08 18:40:23 CEST 2019
+base.0=D\:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex

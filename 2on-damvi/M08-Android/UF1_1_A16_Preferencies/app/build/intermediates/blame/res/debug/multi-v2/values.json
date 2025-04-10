@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Niko\\AndroidStudioProjects\\UF1_1_A16_Preferencies\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1_1_A16_Preferencies\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,8,7,6",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "19,79,133,185,384,321,256",
+                        "endColumns": "58,52,50,69,65,61,63",
+                        "endOffsets": "73,127,179,250,445,378,315"
+                    },
+                    "to": {
+                        "startLines": "12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "300,359,412,463,533,599,661",
+                        "endColumns": "58,52,50,69,65,61,63",
+                        "endOffsets": "354,407,458,528,594,656,720"
+                    }
+                },
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1_1_A16_Preferencies\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "19",
+                        "endColumns": "58",
+                        "endOffsets": "73"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "725",
+                        "endColumns": "57",
+                        "endOffsets": "778"
+                    }
+                },
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1_1_A16_Preferencies\\app\\src\\main\\res\\values\\masvalores.xml",
+                    "from": {
+                        "startLines": "2,7",
+                        "startColumns": "1,1",
+                        "startOffsets": "54,187",
+                        "endLines": "6,11",
+                        "endColumns": "16,16",
+                        "endOffsets": "184,300"
+                    },
+                    "to": {
+                        "startLines": "2,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,186",
+                        "endLines": "6,11",
+                        "endColumns": "16,16",
+                        "endOffsets": "181,295"
+                    }
+                }
+            ]
+        }
+    ]
+}

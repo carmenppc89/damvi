@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <string name="app_name">UF1-1-A12-Dues-Activities-Intents</string>
+    <string name="hello_world">Dame tu nombre y pulsa el boton</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">UF1-1-A12-Dues-Activities-Intents</string>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+</resources>

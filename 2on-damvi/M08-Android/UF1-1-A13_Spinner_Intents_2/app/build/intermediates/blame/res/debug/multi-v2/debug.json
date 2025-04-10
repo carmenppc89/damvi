@@ -1,0 +1,101 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\build\\intermediates\\res\\merged\\debug\\values-large-v4_values-large-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\src\\main\\res\\values-large\\dimens.xml",
+                    "from": {
+                        "startLines": "4,3,2",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "111,64,19",
+                        "endColumns": "44,45,43",
+                        "endOffsets": "151,105,58"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,100,146",
+                        "endColumns": "44,45,43",
+                        "endOffsets": "95,141,185"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "19",
+                        "endColumns": "58",
+                        "endOffsets": "73"
+                    },
+                    "to": {
+                        "startLines": "21",
+                        "startColumns": "4",
+                        "startOffsets": "941",
+                        "endColumns": "57",
+                        "endOffsets": "994"
+                    }
+                },
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "4,3,2",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "110,64,19",
+                        "endColumns": "44,44,43",
+                        "endOffsets": "150,104,58"
+                    },
+                    "to": {
+                        "startLines": "8,9,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "235,280,325",
+                        "endColumns": "44,44,43",
+                        "endOffsets": "275,320,364"
+                    }
+                },
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\src\\main\\res\\values\\formes_enviament.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "7",
+                        "endColumns": "19",
+                        "endOffsets": "241"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "7",
+                        "endColumns": "19",
+                        "endOffsets": "230"
+                    }
+                },
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A13_Spinner_Intents_2\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,3,7,8,6,4,11,10,5,9",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "19,85,314,367,262,139,542,481,191,418",
+                        "endColumns": "64,52,51,49,50,50,57,59,69,61",
+                        "endOffsets": "79,133,361,412,308,185,595,536,256,475"
+                    },
+                    "to": {
+                        "startLines": "11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "369,434,487,539,589,640,691,749,809,879",
+                        "endColumns": "64,52,51,49,50,50,57,59,69,61",
+                        "endOffsets": "429,482,534,584,635,686,744,804,874,936"
+                    }
+                }
+            ]
+        }
+    ]
+}

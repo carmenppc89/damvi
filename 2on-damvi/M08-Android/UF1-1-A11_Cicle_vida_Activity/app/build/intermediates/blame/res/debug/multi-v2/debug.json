@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A11_Cicle_vida_Activity\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A11_Cicle_vida_Activity\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "19",
+                        "endColumns": "58",
+                        "endOffsets": "73"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "433",
+                        "endColumns": "57",
+                        "endOffsets": "486"
+                    }
+                },
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A11_Cicle_vida_Activity\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "4,3,2",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "110,64,19",
+                        "endColumns": "44,44,43",
+                        "endOffsets": "150,104,58"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,100,145",
+                        "endColumns": "44,44,43",
+                        "endOffsets": "95,140,184"
+                    }
+                },
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A11_Cicle_vida_Activity\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "19,87,141,193",
+                        "endColumns": "66,52,50,72",
+                        "endOffsets": "81,135,187,261"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "189,256,309,360",
+                        "endColumns": "66,52,50,72",
+                        "endOffsets": "251,304,355,428"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A11_Cicle_vida_Activity\\app\\build\\intermediates\\res\\merged\\debug\\values-large-v4_values-large-v4.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\Niko\\AndroidStudioProjects\\UF1-1-A11_Cicle_vida_Activity\\app\\src\\main\\res\\values-large\\dimens.xml",
+                    "from": {
+                        "startLines": "4,3,2",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "111,64,19",
+                        "endColumns": "44,45,43",
+                        "endOffsets": "151,105,58"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,100,146",
+                        "endColumns": "44,45,43",
+                        "endOffsets": "95,141,185"
+                    }
+                }
+            ]
+        }
+    ]
+}

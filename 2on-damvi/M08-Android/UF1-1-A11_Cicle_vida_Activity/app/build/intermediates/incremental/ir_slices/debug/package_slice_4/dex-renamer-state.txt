@@ -1,0 +1,4 @@
+#Tue Oct 08 17:54:24 CEST 2019
+base.0=D\:\\Niko\\AndroidStudioProjects\\UF1-1-A11_Cicle_vida_Activity\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\4
+path.0=classes.dex
+renamed.0=classes.dex

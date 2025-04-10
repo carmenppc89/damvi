@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listArray">
+     <item>Value 1</item>
+     <item>Value 2</item>
+     <item>Value 3</item>
+ </string-array>
+    <string-array name="listValues">
+     <item>1</item>
+     <item>2</item>
+     <item>3</item>
+ </string-array>
+    <string name="app_name">UF1-1-A16-Preferences</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">UF1-1-A16-Preferences</string>
+    <string name="title_activity_poner_prefs">PonerPrefs</string>
+    <string name="title_activity_set_prefs">SetPrefs</string>
+    <string name="title_activity_show_prefs">ShowPrefs</string>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ContaLletres</string>
+    <string name="txt_LletresAContar">Lletres a Contar</string>
+    <string name="txt_NumLletres">Numero de Lletres.</string>
+    <string name="resp_NumLletres1">Hi ha </string>
+    <string name="resp_NumLletres2"> Lletres.</string>
+
+</resources>
