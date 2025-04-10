@@ -1,0 +1,4 @@
+repository "UF2-RPGerduras@LosVeganos@cloud"
+  path "/"
+    smartbranch "/main/EventoDeEmpezarBatalla" changeset "48"                               
+     

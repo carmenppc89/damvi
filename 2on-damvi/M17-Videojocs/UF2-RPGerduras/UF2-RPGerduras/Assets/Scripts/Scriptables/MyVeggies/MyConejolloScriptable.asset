@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e512ae88573cc4f4abc428dbcc57935c, type: 3}
+  m_Name: MyConejolloScriptable
+  m_EditorClassIdentifier: 
+  OriginalVeggie: {fileID: 11400000, guid: f4ea6857b422a1049bdf45d9e5dfa23e, type: 2}
+  nom: Cogollo
+  attacks: 0000000003000000
+  Sprite: {fileID: -294175275, guid: dccb947ec2d219346af0cb2ecfc4d07a, type: 3}
+  hpActual: 20
+  hpMax: 20
+  MineralActual: 20
+  MineralMax: 20
+  Exp: 0
+  Nivel: 1
+  Atk: 3
+  Def: 3
