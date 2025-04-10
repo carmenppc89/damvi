@@ -1,0 +1,5 @@
+el dashboard surt trencat quan crees un questionari i encara no hi ha intents
+tens el ranking al dashboard, no a la home. 
+quan enviis un intent sortira un error si li dones dos cops a add task, 
+perque es un intent de view que no hem acabat treient. 
+ves a '/' per veure el ranking de notes.

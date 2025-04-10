@@ -1,0 +1,13 @@
++ Instalacio:
+pip install django
+python -m django --version
+
+rutaProjecte> python -m django startproject NOMPROJECTE
+
++ Comandes Terminal:
+python manage.py startapp 
+python manage.py runserver
+python manage.py makemigrations NOMCARPETA
+python manage.py migrate
+
+python manage.py createsuperuser
