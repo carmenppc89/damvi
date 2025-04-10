@@ -1,0 +1,20 @@
+[
+	{ "s": "HABILIDADES", "p": [14, 2] },
+	{ "s": "HABITACION", "p": [5] },
+	{ "s": "HABITACIONES", "p": [5] },
+	{ "s": "HABITACIÓN", "p": [2, 5] },
+	{ "s": "HABÍA", "p": [13] },
+	{ "s": "HACE", "p": [14] },
+	{ "s": "HACER", "p": [14] },
+	{ "s": "HACIA", "p": [6] },
+	{ "s": "HADES", "p": [13, 1] },
+	{ "s": "HAMMER", "p": [5] },
+	{ "s": "HARÁ", "p": [6] },
+	{ "s": "HASTA", "p": [6] },
+	{ "s": "HAYA", "p": [6] },
+	{ "s": "HEART", "p": [2] },
+	{ "s": "HERMES", "p": [5] },
+	{ "s": "HIJO", "p": [13] },
+	{ "s": "HOJA", "p": [7, 6] },
+	{ "s": "HOLD", "p": [3] }
+]

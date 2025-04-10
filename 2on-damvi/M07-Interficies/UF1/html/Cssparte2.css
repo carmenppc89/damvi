@@ -1,0 +1,40 @@
+.bordes{
+border-style: solid;   
+}
+#header{
+width: 23.5%;
+background-color: #ff2073;
+border-color: #ff2073;
+}
+#navigation{
+position: absolute;
+width: 5%;
+height: 36%;
+background-color: #00c979;
+border-color:#00c979;
+}
+#article2{
+position: absolute;
+width: 13%;
+top: 1%;
+left: 5.4%;
+top:6.7%;
+background-color: #fffc00;
+border-color: #fffc00;
+}
+#commercials{
+position: absolute;
+width: 5%;
+left: 18.7%;
+top:6.7%;
+height: 36%;
+background-color: #cccccc;
+border-color:  #cccccc;
+}
+#footer{
+position: absolute;
+width: 23.3%;
+background-color: #6b7dff;
+border-color: #6b7dff;
+top:43%;
+}

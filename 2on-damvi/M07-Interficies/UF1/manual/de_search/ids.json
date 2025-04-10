@@ -1,0 +1,16 @@
+{
+	"1": ["Página principal", "index.htm", []],
+	"2": ["1. Gameplay Basico", "gameplay_basico.htm", []],
+	"3": ["1.1 Controles", "1_1_controles.htm", [1]],
+	"4": ["2. Gameplay avanzado ", "gameplay_avanzado_.htm", []],
+	"5": ["2.1. Estructura de las mazmorras", "estructura_de_las_mazmorras.htm", [2]],
+	"6": ["3. Armas", "armas.htm", []],
+	"7": ["3.1. Hoja de Estigia", "hoja_de_estigia.htm", [3]],
+	"8": ["3.2. Lanza eterna", "lanza_eterna.htm", [3]],
+	"9": ["3.3. Escudo del caos ", "escudo_del_caos_.htm", [3]],
+	"10": ["3.4. Arco clavacorazones", "arco_clavacorazones.htm", [3]],
+	"11": ["3.5. Puños gemelos", "punos_gemelos.htm", [3]],
+	"12": ["3.6. Cañon adamantino", "canon_adamantino.htm", [3]],
+	"13": ["4. Personajes principales", "personajes_principales.htm", []],
+	"14": ["5. Dioses", "dioses.htm", []]
+}

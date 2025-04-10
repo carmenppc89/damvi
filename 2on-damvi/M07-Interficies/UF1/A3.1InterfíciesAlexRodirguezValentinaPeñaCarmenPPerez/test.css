@@ -1,0 +1,409 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html{
+  background-image:url(https://mocah.org/uploads/posts/4588415-cyberpunk-remember-me-futuristic-red-environment-robot-war-drone-machine-digital-art-dystopian-urban-cityscape-city-concept-art-paris-video-games-futuristic-city.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+}
+.bg{
+ 
+  height:100%;
+}
+.bg-6{
+    background-color: #000000;
+}
+
+.glitch {
+    color: white;
+    font-size: 80px;
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    font-family: 'Varela', sans-serif;
+ }
+
+.glitch:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 16px;
+    text-shadow: -1px 0 red;
+    top: 0;
+    color: white;
+    background: black;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch:before {
+    content: attr(data-text);
+    position: absolute;
+    left: 8px;
+    text-shadow: 1px 0 blue;
+    top: 0;
+    color: white;
+    background: black;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+ @keyframes noise-anim {
+    0% {
+      clip: rect(51px, 9999px, 28px, 0);
+    }
+    5% {
+      clip: rect(70px, 9999px, 19px, 0);
+    }
+    10% {
+      clip: rect(92px, 9999px, 13px, 0);
+    }
+    15% {
+      clip: rect(85px, 9999px, 49px, 0);
+    }
+    20% {
+      clip: rect(45px, 9999px, 56px, 0);
+    }
+    25% {
+      clip: rect(26px, 9999px, 31px, 0);
+    }
+    30% {
+      clip: rect(62px, 9999px, 73px, 0);
+    }
+    35% {
+      clip: rect(34px, 9999px, 11px, 0);
+    }
+    40% {
+      clip: rect(26px, 9999px, 61px, 0);
+    }
+    45% {
+      clip: rect(34px, 9999px, 71px, 0);
+    }
+    50% {
+      clip: rect(35px, 9999px, 69px, 0);
+    }
+    55% {
+      clip: rect(92px, 9999px, 81px, 0);
+    }
+    60% {
+      clip: rect(26px, 9999px, 85px, 0);
+    }
+    65% {
+      clip: rect(2px, 9999px, 68px, 0);
+    }
+    70% {
+      clip: rect(54px, 9999px, 79px, 0);
+    }
+    75% {
+      clip: rect(35px, 9999px, 85px, 0);
+    }
+    80% {
+      clip: rect(70px, 9999px, 60px, 0);
+    }
+    85% {
+      clip: rect(32px, 9999px, 26px, 0);
+    }
+    90% {
+      clip: rect(94px, 9999px, 53px, 0);
+    }
+    95% {
+      clip: rect(99px, 9999px, 92px, 0);
+    }
+    100% {
+      clip: rect(42px, 9999px, 27px, 0);
+    }
+  }
+
+  @keyframes noise-anim-2 {
+    0% {
+      clip: rect(21px, 9999px, 49px, 0);
+    }
+    5% {
+      clip: rect(27px, 9999px, 52px, 0);
+    }
+    10% {
+      clip: rect(21px, 9999px, 70px, 0);
+    }
+    15% {
+      clip: rect(65px, 9999px, 25px, 0);
+    }
+    20% {
+      clip: rect(24px, 9999px, 10px, 0);
+    }
+    25% {
+      clip: rect(61px, 9999px, 64px, 0);
+    }
+    30% {
+      clip: rect(34px, 9999px, 47px, 0);
+    }
+    35% {
+      clip: rect(46px, 9999px, 93px, 0);
+    }
+    40% {
+      clip: rect(46px, 9999px, 9px, 0);
+    }
+    45% {
+      clip: rect(67px, 9999px, 36px, 0);
+    }
+    50% {
+      clip: rect(72px, 9999px, 20px, 0);
+    }
+    55% {
+      clip: rect(79px, 9999px, 26px, 0);
+    }
+    60% {
+      clip: rect(13px, 9999px, 87px, 0);
+    }
+    65% {
+      clip: rect(10px, 9999px, 25px, 0);
+    }
+    70% {
+      clip: rect(85px, 9999px, 11px, 0);
+    }
+    75% {
+      clip: rect(94px, 9999px, 35px, 0);
+    }
+    80% {
+      clip: rect(50px, 9999px, 86px, 0);
+    }
+    85% {
+      clip: rect(74px, 9999px, 67px, 0);
+    }
+    90% {
+      clip: rect(1px, 9999px, 40px, 0);
+    }
+    95% {
+      clip: rect(3px, 9999px, 48px, 0);
+    }
+    100% {
+      clip: rect(90px, 9999px, 23px, 0);
+    }
+  }
+
+body{
+ background:url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/noisy_net.png') repeat;
+    font-size: 100%;
+   font-family: Arial, helvetica, sans-serif;
+}
+.area{
+  text-align:center;
+  font-size:6.5em;
+  color:#fff;
+  letter-spacing: -7px;
+  font-weight:700;
+  text-transform:uppercase;
+  animation:blur .75s ease-out infinite;
+  text-shadow:0px 0px 5px #fff,
+      0px 0px 7px #fff;
+}
+
+@keyframes blur{
+  from{
+      text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;}
+}
+
+
+ .wrapper {
+   width: 720px;
+   margin: 45px auto;
+}
+ .wrapper h1 {
+   font-size: 280%;
+   text-align: center;
+   text-transform: uppercase;
+}
+ .wrapper p {
+   font-size: 150%;
+   text-align: center;
+   text-transform: uppercase;
+}
+ .wrapper .btn-groups {
+   width: 640px;
+   margin: 0 auto;
+   display:flex;
+  
+}
+ .btn-red-tr {
+   width: 20%;
+   position: relative;
+   display: block;
+   text-align: center;
+   text-transform: uppercase;
+   padding: 15px;
+   margin: 30px 25px;
+   font-size: 140%;
+   font-weight: 600;
+   color: #ecf0f1;
+   transition: 0.5s;
+}
+ .btn-red-tr {
+   background-color: #e74c3c;
+}
+ 
+ .btn-red-tr:before {
+   position: absolute;
+   content: "";
+   border-top: 5px solid #ea6153;
+   border-left: 5px solid #ea6153;
+   border-right: 5px solid #e43725;
+   border-bottom: 5px solid #e43725;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   transition: 0.5s;
+}
+ 
+ .btn-red-tr:hover {
+   box-shadow: 7px 7px #a82315, -7px -7px #f29f97;
+   cursor: pointer;
+}
+ .btn-red-tr:hover::before {
+   border: 0px;
+}
+ 
+ .btn-red-qa {
+   min-width: 120px;
+   position: relative;
+   display: inline-block;
+   text-align: center;
+   text-transform: uppercase;
+   padding: 10px 15px;
+   margin: 30px 25px;
+   font-size: 140%;
+   font-weight: 600;
+   transition: 0.5s;
+}
+ .btn-red-qa {
+   border: 5px solid #e74c3c;
+   color: #e74c3c;
+}
+ .btn-red-qa:hover {
+   cursor: pointer;
+}
+ .btn-red-qa:hover::before {
+   border: 0px;
+}
+ .btn-red-qa:hover {
+   background-color: #e43725;
+   border: 5px solid #ea6153;
+   color: #ecf0f1;
+   cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#quit{
+  position:relative;
+ top:100px;
+  margin-right:10px;
+  float:right;
+}
+
+a {
+  border-radius: 12px;
+  border: 3px outset #888;
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  overflow: hidden;
+  
+  box-shadow: 0 0 10px rgb(0, 0, 0, 1);
+  font-family: verdana;
+  font-size: 28px;
+  font-weight: bolder;
+  text-decoration: none;
+  background:linear-gradient(160deg, #666, #444);
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+
+  transition: 0.2s;
+
+}
+a:active {
+  border: 3px outset #ddd;
+  color: #fff;
+  background: linear-gradient(160deg, #666, #444);
+  text-shadow: 0px 0px 4px #ccc;
+  box-shadow: 0 0 10px #fff, 0 0 40px #fff, 0 0 80px #fff;
+  transition-delay: 1s;
+}
+
+a span {
+  position: absolute;
+  display: block;
+}
+
+a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #eee);
+}
+a:active span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #eee);
+}
+a:active span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #eee);
+}
+a:active span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #eee);
+}
+a:active span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+ 

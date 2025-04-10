@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JS act1-1">
+    <meta name="keywords" content="HTML y CSS">
+    <meta name="author" content="Ruben Moreno">
+    <title>Act1</title>
+</head>
+
+    <style>
+        
+        #imagen {
+            width: 10%;  
+            position: relative;
+            left: 50%;                
+        }
+        #content {
+            position: relative;
+            left: 50%;
+            transform: translate(-110%, -120%);
+            width: 20%;
+            height: 100%;
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background-color: rgb(224, 231, 213);
+            border: 0.01vw solid black;
+            border-radius: 1vw;
+            padding: 2vw;
+        }
+        #contenedorimg {              
+            border: 0.01vw solid black;
+            border-radius: 1vw;
+            padding: 2vw;                       
+        }
+        
+        .ancho {
+            position: relative;
+            left: 10%;
+            width: 80%;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .cajaimagen{
+            display: inline-block;
+            width: 10%;
+        }
+        .imagenkali{
+            width: 100%;  
+        }
+    </style>
+
+
+<script>
+    var color = "white";
+    function crear() {
+        var abobole = document.getElementById("contenedorimg");        
+        var cajaimagen = document.createElement("div");
+        cajaimagen.className = "cajaimagen";
+        
+        console.log(abobole);
+        var aux = abobole.appendChild(cajaimagen); 
+        
+        var imagenkali = document.createElement("img");
+        imagenkali.className = "imagenkali";   
+        imagenkali.src = "kali.png"; 
+        aux.style.backgroundColor = color;
+        aux.appendChild(imagenkali);
+    }
+    function eliminar() {
+        var abobole = document.getElementById("contenedorimg");
+        abobole.removeChild(abobole.lastChild);
+    }
+    function restaurarC() {
+        color = "white";
+        var abobole = document.getElementsByClassName("cajaimagen");
+        for (let index = 0; index < abobole.length; index++) {            
+            abobole[index].style.backgroundColor = color;            
+        }
+    }
+    function Verde() {
+        color = "greenyellow";
+        var abobole = document.getElementsByClassName("cajaimagen");
+        for (let index = 0; index < abobole.length; index++) {            
+            abobole[index].style.backgroundColor = color;            
+        }
+    }
+
+    function Rojo() {
+        color = "red";
+        var abobole = document.getElementsByClassName("cajaimagen");
+        for (let index = 0; index < abobole.length; index++) {            
+            abobole[index].style.backgroundColor = color;            
+        }
+    }
+    function colorines() {
+        color = "red";
+        var abobole = document.getElementsByClassName("cajaimagen");        
+        for (let index = 0; index < abobole.length; index++) {            
+            abobole[index].style.backgroundColor = color;            
+        }
+    }
+    
+</script>
+
+<body>   
+    <div> 
+    <img id="imagen" src="kali.png">
+    </div>
+    <div id="content">
+        <button id="btnCrear" class="ancho" onclick="crear()">Crear</button>
+        <button id="btnEliminar" class="ancho" onclick="eliminar()">Eliminar</button>
+        <button id="btnRestaurarC" class="ancho" onclick="restaurarC()">RestaurarColor</button>
+        <button id="btnVerde" class="ancho" onclick="Verde()">Verde</button>
+        <button id="btnRojo" class="ancho" onclick="Rojo()">Rojo</button>    
+        <input type="color" id="btnColor"class="ancho" onchange="colorines()">   
+    </div>
+
+    <div id = "contenedorimg">
+        
+    </div>
+</body>
+
+</html>

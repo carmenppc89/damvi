@@ -1,0 +1,5 @@
+﻿Primera línia
+Segona línia
+Tercera línia
+Quarta línia
+Última línia abans de EOF

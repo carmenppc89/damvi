@@ -1,0 +1,18 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.div1 { grid-area: 1 / 1 / 4 / 4; }
+.div2 { grid-area: 2 / 2 / 3 / 3; }
+.div3 { grid-area: 1 / 2 / 2 / 3; }
+
+#Titol{
+    margin-top: 20%;
+    justify-content: center;
+}
+
+.body{
+    background-color: darkcyan;
+}

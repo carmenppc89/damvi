@@ -1,0 +1,48 @@
+.bordes{
+    border-style: solid;
+    text-align: center;
+}
+#header{
+border-radius: 10px;
+border-color: #22c849;
+background-color: #22c849;
+width: 516px;
+height: 75px;
+}
+#article{
+border-radius: 10px;
+border-color: #aaaaaa;
+background-color: #aaaaaa;
+height: 75px;
+width: 340px;
+margin-top: 10px;
+}
+#article2{
+border-radius: 10px;
+border-color: #aaaaaa;
+background-color: #aaaaaa;
+height: 75px;
+width: 340px;
+margin-top: 10px;
+
+}
+#aside{
+border-radius: 10px;
+border-color: #ff7e00;
+background-color: #ff7e00;
+height: 165px;
+width: 160px;
+position: absolute;
+top: 100px;
+left: 360px;
+
+
+}
+#footer{
+border-radius: 10px;
+border-color: #00a2ff;
+background-color: #00a2ff;
+height: 75px;
+width: 516px;
+margin-top: 10px;
+}

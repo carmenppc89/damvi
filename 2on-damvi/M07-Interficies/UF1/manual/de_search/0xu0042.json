@@ -1,0 +1,11 @@
+[
+	{ "s": "BASICO", "p": [2] },
+	{ "s": "BENDICION", "p": [14] },
+	{ "s": "BENDICIONES", "p": [14, 2] },
+	{ "s": "BENDICIÓN", "p": [5, 2, 14] },
+	{ "s": "BLOOD", "p": [2] },
+	{ "s": "BLOQUEARÁ", "p": [6] },
+	{ "s": "BOMBARDEAR", "p": [6] },
+	{ "s": "BOTÓN", "p": [6] },
+	{ "s": "BÁSICA", "p": [2] }
+]
